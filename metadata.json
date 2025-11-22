@@ -1,0 +1,7 @@
+{
+  "name": "React Dynamic EQ Prototype",
+  "description": "A professional-grade Dynamic EQ web prototype inspired by FabFilter Pro-Q. Features interactive spectrum visualization, parametric bands, and dynamic processing controls.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
