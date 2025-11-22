@@ -172,7 +172,7 @@ const EqVisualizer: React.FC<EqVisualizerProps> = ({
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext('2d', { alpha: true } as any);
     if (!ctx) return;
 
     const { width, height } = dimensions;
@@ -191,8 +191,8 @@ const EqVisualizer: React.FC<EqVisualizerProps> = ({
       if (input) input.getByteFrequencyData(dataArrayInput);
       if (output) output.getByteFrequencyData(dataArrayOutput);
 
-      // Clear
-      ctx.fillStyle = '#020617';
+      ctx.clearRect(0, 0, width, height);
+      ctx.fillStyle = 'rgba(2, 6, 23, 0.20)';
       ctx.fillRect(0, 0, width, height);
 
       // Draw Grid
@@ -470,7 +470,7 @@ const EqVisualizer: React.FC<EqVisualizerProps> = ({
   };
 
   return (
-    <div ref={containerRef} className="relative w-full h-full bg-slate-950 cursor-crosshair overflow-hidden">
+    <div ref={containerRef} className="relative w-full h-full bg-transparent cursor-crosshair overflow-hidden">
       <canvas 
         ref={canvasRef}
         onMouseDown={handleMouseDown}
@@ -478,7 +478,7 @@ const EqVisualizer: React.FC<EqVisualizerProps> = ({
         onMouseUp={handleMouseUp}
         onMouseLeave={handleMouseUp}
         onDoubleClick={handleDoubleClick}
-        className="block"
+        className="block bg-transparent"
       />
       <div className="absolute top-4 right-4 text-slate-500 text-xs pointer-events-none select-none bg-slate-900/80 p-2 rounded backdrop-blur-sm">
         <div className="flex items-center gap-2 mb-1"><div className="w-2 h-2 bg-slate-500 opacity-30 rounded-full"></div> Original Input</div>

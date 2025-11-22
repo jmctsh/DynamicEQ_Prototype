@@ -31,7 +31,7 @@ const Controls: React.FC<ControlsProps> = ({ band, onUpdate, onDelete }) => {
   };
 
   return (
-    <div className="h-48 bg-slate-900/90 border-t border-slate-800 p-4 flex gap-8 overflow-x-auto backdrop-blur-md shadow-2xl">
+    <div className="h-48 bg-slate-900/60 border-t border-slate-800 p-4 flex gap-8 overflow-x-auto backdrop-blur-md shadow-2xl">
       {/* Main Params */}
       <div className="flex items-center gap-4 border-r border-slate-800 pr-6 min-w-fit">
         <div className="flex flex-col gap-2 w-20">

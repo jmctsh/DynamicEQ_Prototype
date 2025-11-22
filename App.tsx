@@ -115,7 +115,11 @@ const App: React.FC = () => {
   const selectedBand = bands.find(b => b.id === selectedBandId) || null;
 
   return (
-    <div className="flex flex-col h-screen bg-slate-950 text-white font-sans overflow-hidden select-none">
+    <div className="relative flex flex-col h-screen bg-slate-950/30 text-white font-sans overflow-hidden select-none">
+      <div className="absolute inset-0 -z-10 pointer-events-none">
+        <img src="/background.jpg" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-slate-950/40"></div>
+      </div>
       {/* Hidden Input */}
       <input 
         type="file" 
@@ -126,7 +130,7 @@ const App: React.FC = () => {
       />
 
       {/* Header */}
-      <header className="h-16 flex items-center justify-between px-6 bg-slate-900 border-b border-slate-800 z-10">
+      <header className="h-16 flex items-center justify-between px-6 bg-slate-900/60 border-b border-slate-800 z-10">
         <div className="flex items-center gap-3">
           <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center shadow-lg shadow-blue-900/20">
             <Zap className="text-white w-5 h-5" />
